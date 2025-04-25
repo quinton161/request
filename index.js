@@ -22,11 +22,11 @@ app.get('/api/whoami', (req, res) => {
   // Get software info from User-Agent header
   const software = req.headers['user-agent'];
   
-  // Return JSON response with the requested information
+  // Return JSON response with the requested information - exact property names for tests
   res.json({
-    ipaddress: ipAddress,
-    language: language,
-    software: software
+    "ipaddress": ipAddress,
+    "language": language,
+    "software": software
   });
 });
 
