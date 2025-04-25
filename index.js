@@ -3,14 +3,18 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Trust proxy setup for correct IP address detection
+app.set('trust proxy', true);
+
 // Enable static file serving from the public directory
 app.use(express.static('public'));
 
 // API endpoint to get client info
 app.get('/api/whoami', (req, res) => {
-  // Get IP address (using x-forwarded-for header if available for proxied requests)
-  const ipAddress = req.headers['x-forwarded-for'] || 
-                    req.connection.remoteAddress;
+  // Get IP address
+  const ipAddress = req.ip || 
+                    req.headers['x-forwarded-for'] || 
+                    req.socket.remoteAddress;
   
   // Get preferred language from Accept-Language header
   const language = req.headers['accept-language'];
