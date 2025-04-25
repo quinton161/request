@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Header Parser Microservice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+    .endpoint {
+      background-color: #f7f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #3498db;
+      margin-bottom: 20px;
+    }
+    .output {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+    code {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #2980b9;
+    }
+    .example {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Request Header Parser Microservice</h1>
+    
+    <div class="endpoint">
+      <h2>API Endpoint:</h2>
+      <p>
+        <a href="/api/whoami" class="btn">GET /api/whoami</a>
+      </p>
+      <p>Returns a JSON object with your IP address, language, and software information.</p>
+    </div>
+
+    <div class="example">
+      <h2>Example Output:</h2>
+      <pre class="output">{
+  "ipaddress": "159.20.14.100",
+  "language": "en-US,en;q=0.5",
+  "software": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+}</pre>
+    </div>
+  </div>
+</body>
+</html> 
