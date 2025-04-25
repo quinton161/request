@@ -1,7 +1,7 @@
 // Import required modules
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Trust proxy setup for correct IP address detection
 app.set('trust proxy', true);

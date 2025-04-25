@@ -4,7 +4,7 @@ This is a simple microservice that parses and returns information from HTTP requ
 
 ## Live Demo
 
-You can test the app locally at: http://localhost:3000/
+You can test the app locally at: http://localhost:3001/
 
 ## API Endpoint
 
@@ -28,7 +28,7 @@ You can test the app locally at: http://localhost:3000/
 1. Clone the repository
 2. Install dependencies with `npm install`
 3. Start the server with `npm start`
-4. Visit `http://localhost:3000` in your browser
+4. Visit `http://localhost:3001` in your browser
 
 ## Technologies Used
 
