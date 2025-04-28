@@ -11,23 +11,10 @@ app.use(express.static('public'));
 
 // API endpoint to get client info
 app.get('/api/whoami', function(req, res) {
-  // Get the client's IP address
-  const ipaddress = req.ip || 
-                    req.connection.remoteAddress ||
-                    req.socket.remoteAddress ||
-                    req.connection.socket.remoteAddress;
-
-  // Get the preferred language from the Accept-Language header
-  const language = req.headers['accept-language'];
-
-  // Get the client software from the User-Agent header
-  const software = req.headers['user-agent'];
-
-  // Send the response
   res.json({
-    ipaddress: ipaddress,
-    language: language,
-    software: software
+    ipaddress: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+    language: req.headers['accept-language'],
+    software: req.headers['user-agent']
   });
 });
 
