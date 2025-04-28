@@ -1,37 +1,74 @@
 # Request Header Parser Microservice
 
-This is a simple microservice that parses and returns information from HTTP request headers. The service provides details about the client's IP address, preferred language, and browser information.
+This is a simple Node.js microservice that parses request headers and returns information about the client making the request.
 
-## Live Demo
+## Functionality
 
-You can test the app locally at: http://localhost:3001/
+The application provides an API endpoint that returns the following information:
+
+- IP address of the client
+- Language preference of the client
+- Software information (browser and operating system)
+
+## Demo
+
+You can access the live demo at: [your-deployed-app-url]
 
 ## API Endpoint
 
-- **GET /api/whoami**: Returns a JSON object containing:
-  - `ipaddress`: The client's IP address
-  - `language`: The client's preferred language
-  - `software`: Information about the client's browser and operating system
+### GET /api/whoami
 
-### Example Response
+Returns a JSON object with the following structure:
 
 ```json
 {
   "ipaddress": "192.168.1.1",
   "language": "en-US,en;q=0.5",
-  "software": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+  "software": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 ```
 
-## Running the App Locally
+## Installation and Setup
 
 1. Clone the repository
-2. Install dependencies with `npm install`
-3. Start the server with `npm start`
-4. Visit `http://localhost:3001` in your browser
+   ```
+   git clone https://github.com/yourusername/request-header-parser-microservice.git
+   ```
+
+2. Install dependencies
+   ```
+   npm install
+   ```
+
+3. Start the server
+   ```
+   npm start
+   ```
+
+4. The application will be available at `http://localhost:3000`
+
+## Development Mode
+
+To run the application in development mode with automatic reloading:
+```
+npm run dev
+```
 
 ## Technologies Used
 
 - Node.js
 - Express.js
-- HTML/CSS 
+- CORS for cross-origin requests
+- dotenv for environment variable management
+
+## Project Requirements
+
+This project is based on the freeCodeCamp Request Header Parser Microservice challenge, meeting the following requirements:
+
+1. A request to `/api/whoami` returns a JSON object with the client's IP address in the `ipaddress` key.
+2. A request to `/api/whoami` returns a JSON object with the client's preferred language in the `language` key.
+3. A request to `/api/whoami` returns a JSON object with the client's software information in the `software` key.
+
+## License
+
+MIT 

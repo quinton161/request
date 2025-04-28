@@ -1,25 +1,17 @@
 {
-  "name": "request-header-parser-microservice",
+  "name": "request-header-parser",
   "version": "1.0.0",
-  "description": "A microservice that parses request headers and returns IP address, language, and software information",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "api",
-    "microservice",
-    "express",
-    "freecodecamp"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "A microservice that returns information about the client's request headers",
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }
