@@ -1,7 +1,7 @@
 // Import required modules
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 // Trust proxy setup for correct IP address detection
 app.set('trust proxy', true);
@@ -10,23 +10,24 @@ app.set('trust proxy', true);
 app.use(express.static('public'));
 
 // API endpoint to get client info
-app.get('/api/whoami', (req, res) => {
-  // Get IP address
-  const ipAddress = req.ip || 
-                    req.headers['x-forwarded-for'] || 
-                    req.socket.remoteAddress;
-  
-  // Get preferred language from Accept-Language header
+app.get('/api/whoami', function(req, res) {
+  // Get the client's IP address
+  const ipaddress = req.ip || 
+                    req.connection.remoteAddress ||
+                    req.socket.remoteAddress ||
+                    req.connection.socket.remoteAddress;
+
+  // Get the preferred language from the Accept-Language header
   const language = req.headers['accept-language'];
-  
-  // Get software info from User-Agent header
+
+  // Get the client software from the User-Agent header
   const software = req.headers['user-agent'];
-  
-  // Return JSON response with the requested information - exact property names for tests
+
+  // Send the response
   res.json({
-    "ipaddress": ipAddress,
-    "language": language,
-    "software": software
+    ipaddress: ipaddress,
+    language: language,
+    software: software
   });
 });
 
